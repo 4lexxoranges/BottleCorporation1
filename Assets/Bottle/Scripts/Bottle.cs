@@ -33,7 +33,8 @@ public class Bottle : MonoBehaviour
     public DeathMenu deathMenu;
     private bool isPaused = false;
     public GameObject pp;
-    public GameObject fl;
+    
+   
     
 
     private float currentFuel;
@@ -63,7 +64,10 @@ public class Bottle : MonoBehaviour
         {
             coinsCount = 0;
         }
-        coins.text = "" + coinsCount.ToString(); 
+        
+            coins.text = "Coins:" + coinsCount.ToString();
+        
+        
 
 
 
@@ -85,18 +89,7 @@ public class Bottle : MonoBehaviour
         
 
     }
-    void FuelLow()
-    {
-        if (currentFuel <= 19)
-        {
-            fl.SetActive(true);
-        }
-        
-
-
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -105,7 +98,7 @@ public class Bottle : MonoBehaviour
         {
 
             //Launch(bool y);
-            Rotation();
+            //Rotation(bool x);
             
             if (currentFuel <= 0)
             {
@@ -201,14 +194,14 @@ public class Bottle : MonoBehaviour
     {
         PlayerPrefs.SetInt("coinsFinal", coinsCount);
     }
-    void Rotation()//Поворот ракеты
+    public void Rotation(bool ispressed)//Поворот ракеты
     {
         float rotationSpeed = rotSpeed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.A))
+        if (ispressed)
         {
             transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (ispressed)
         {
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
