@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,11 +10,11 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Text coins;
     public int coinsCount;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.HasKey("coinsFinal"))
+        if (PlayerPrefs.HasKey("coinsFinal"))
         {
             coinsCount = PlayerPrefs.GetInt("coinsFinal");
         }
@@ -21,16 +22,24 @@ public class MenuControl : MonoBehaviour
         {
             coinsCount = 0;
         }
-        coins.text = "Coins:" + coinsCount.ToString();
-        
+        try
+        {
+            coins.text = "Coins:" + coinsCount.ToString();
+        }
+        catch (NullReferenceException)
+        {
+
+            Debug.Log("catch (NullReferenceException)");
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
+
     public void ChangeScene(string sceneName)
     {
         Application.LoadLevel(sceneName);
