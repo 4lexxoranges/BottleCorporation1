@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    [SerializeField]
+    public Bottle bottle;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -12,17 +15,20 @@ public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (!ispressed)
             return;
+        bottle.Launch(ispressed);
         // DO SOMETHING HERE
-        Debug.Log("Pressed");
+        //Debug.Log("Pressed");
+        
     }
     bool ispressed = false;
     public void OnPointerDown(PointerEventData eventData)
     {
         ispressed = true;
+        
     }
 
     public void OnPointerUp(PointerEventData eventData)

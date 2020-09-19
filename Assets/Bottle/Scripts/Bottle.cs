@@ -104,7 +104,7 @@ public class Bottle : MonoBehaviour
         if (state == State.Playing)
         {
 
-            Launch();
+            //Launch(bool y);
             Rotation();
             
             if (currentFuel <= 0)
@@ -147,17 +147,18 @@ public class Bottle : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
     
-    public void Launch()//Взлет
+    public void Launch(bool ispressed)//Взлет
     {
 
-        if (Input.GetKey(KeyCode.Space))
+        //if (Input.GetKey(KeyCode.Space))
+        if (ispressed)
         {
             rigidBody.AddRelativeForce(-Vector3.up);
             if (audioSource.isPlaying == false)
                 audioSource.PlayOneShot(flySound);
             flyParticle.Play(); 
             fuelProgress();
-
+            Debug.Log("tap");
 
 
         }
@@ -273,6 +274,9 @@ public class Bottle : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    
+    public void Test1(bool x)
+    {
+        Debug.Log( x ? "pressed" : "not pressed");
+    }    
 }
 

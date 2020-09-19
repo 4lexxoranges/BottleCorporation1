@@ -6,7 +6,7 @@ using UnityEngine.Experimental.UIElements;
 
 public class ButtonClickHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Rigidbody = rigidbody;
+    
     public bool dragOnSurfaces = true;
 
     private GameObject m_DraggingIcon;
