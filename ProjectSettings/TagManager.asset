@@ -11,6 +11,7 @@ TagManager:
   - Finis
   - Person
   - Fuel
+  - Coin
   layers:
   - Default
   - TransparentFX

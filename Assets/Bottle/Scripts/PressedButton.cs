@@ -20,9 +20,7 @@ public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         if (!ispressed)
             return;
         bottle.Launch(ispressed);
-        if (!ispressed)
-            return;
-        bottle.Rotation(ispressed);
+        
         // DO SOMETHING HERE
         //Debug.Log("Pressed");
 

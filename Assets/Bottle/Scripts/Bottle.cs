@@ -98,7 +98,7 @@ public class Bottle : MonoBehaviour
         {
 
             //Launch(bool y);
-            //Rotation(bool x);
+            Rotation();
             
             if (currentFuel <= 0)
             {
@@ -181,7 +181,7 @@ public class Bottle : MonoBehaviour
             currentFuel += fuelAdd;
             Destroy(trigger.gameObject);
         }
-        if (trigger.gameObject.tag == "Money")
+        if (trigger.gameObject.tag == "Coin")
         {
             coinsCount += 100;
             coins.text = "Coins:" + coinsCount.ToString();
@@ -194,14 +194,14 @@ public class Bottle : MonoBehaviour
     {
         PlayerPrefs.SetInt("coinsFinal", coinsCount);
     }
-    public void Rotation(bool ispressed)//Поворот ракеты
+    public void Rotation(/*bool ispressed*/)//Поворот ракеты
     {
         float rotationSpeed = rotSpeed * Time.deltaTime;
-        if (ispressed)
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
+            transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime); 
         }
-        else if (ispressed)
+        else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
