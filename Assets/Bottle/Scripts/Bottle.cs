@@ -137,7 +137,7 @@ public class Bottle : MonoBehaviour
     public void exit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Shop");
     }
     
     public void Launch(bool ispressed)//Взлет
