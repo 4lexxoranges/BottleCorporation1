@@ -184,7 +184,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: b003e7c905cde7f42b13d09aecca36e5, type: 3}
       propertyPath: m_Name
-      value: 3
+      value: Money
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b003e7c905cde7f42b13d09aecca36e5, type: 3}
       propertyPath: m_TagString

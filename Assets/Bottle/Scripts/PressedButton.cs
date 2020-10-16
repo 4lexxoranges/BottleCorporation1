@@ -21,6 +21,7 @@ public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             return;
         bottle.Launch(ispressed);
         
+
         // DO SOMETHING HERE
         //Debug.Log("Pressed");
 
@@ -29,6 +30,7 @@ public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         ispressed = true;
+        
         
     }
 

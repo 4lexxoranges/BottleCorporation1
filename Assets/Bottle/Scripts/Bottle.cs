@@ -97,7 +97,7 @@ public class Bottle : MonoBehaviour
         if (state == State.Playing)
         {
 
-            //Launch(bool y);
+            //Launch();
             Rotation();
             
             if (currentFuel <= 0)
@@ -194,7 +194,7 @@ public class Bottle : MonoBehaviour
     {
         PlayerPrefs.SetInt("coinsFinal", coinsCount);
     }
-    public void Rotation(/*bool ispressed*/)//Поворот ракеты
+    public void Rotation()//Поворот ракеты
     {
         float rotationSpeed = rotSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))

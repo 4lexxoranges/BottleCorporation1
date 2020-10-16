@@ -44,4 +44,9 @@ public class MenuControl : MonoBehaviour
     {
         Application.LoadLevel(sceneName);
     }
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
