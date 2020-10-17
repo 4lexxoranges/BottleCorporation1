@@ -1162,7 +1162,7 @@ PrefabInstance:
     - target: {fileID: 4576979133760096781, guid: d813027a70d52594d90b8a967b26394a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4576979133760096781, guid: d813027a70d52594d90b8a967b26394a,
         type: 3}
@@ -1184,8 +1184,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon
       objectReference: {fileID: 0}
+    - target: {fileID: 7278329988308742555, guid: d813027a70d52594d90b8a967b26394a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d813027a70d52594d90b8a967b26394a, type: 3}
+--- !u!1 &226076972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7278329988308742555, guid: d813027a70d52594d90b8a967b26394a,
+    type: 3}
+  m_PrefabInstance: {fileID: 226076971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &233456691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desert
       objectReference: {fileID: 0}
+    - target: {fileID: 5571911687600604063, guid: 4044a57355cde3f479ed8737dc47cd73,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7160279270801631107, guid: 4044a57355cde3f479ed8737dc47cd73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1609,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 7160279270801631107, guid: 4044a57355cde3f479ed8737dc47cd73,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7160279270801631107, guid: 4044a57355cde3f479ed8737dc47cd73,
         type: 3}
@@ -1628,6 +1644,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4044a57355cde3f479ed8737dc47cd73, type: 3}
+--- !u!1 &260710464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5571911687600604063, guid: 4044a57355cde3f479ed8737dc47cd73,
+    type: 3}
+  m_PrefabInstance: {fileID: 260710463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311200691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843056158}
   - component: {fileID: 1843056157}
+  - component: {fileID: 1843056159}
   m_Layer: 0
   m_Name: BottleManager
   m_TagString: Untagged
@@ -3765,6 +3788,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1843056159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843056156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc69cd8a71ac4f46b9e771bcdbbab23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground1: {fileID: 1888542286}
+  ground2: {fileID: 260710464}
+  ground3: {fileID: 226076972}
 --- !u!1 &1864970760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,6 +4104,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e568b87623860498f4d0af56217b31, type: 3}
+--- !u!1 &1888542286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7643887283892423103, guid: 35e568b87623860498f4d0af56217b31,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888542285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1947904113
 GameObject:
   m_ObjectHideFlags: 0
