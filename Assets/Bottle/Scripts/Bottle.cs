@@ -139,7 +139,7 @@ public class Bottle : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Shop");
     }
-    
+
     public void Launch(bool ispressed)//Взлет
     {
 
@@ -149,7 +149,7 @@ public class Bottle : MonoBehaviour
             rigidBody.AddRelativeForce(-Vector3.up);
             if (audioSource.isPlaying == false)
                 audioSource.PlayOneShot(flySound);
-            flyParticle.Play(); 
+            flyParticle.Play();
             fuelProgress();
             Debug.Log("tap");
 
@@ -161,9 +161,7 @@ public class Bottle : MonoBehaviour
             flyParticle.Stop();
         }
 
-
     }
-    
     
 
 
