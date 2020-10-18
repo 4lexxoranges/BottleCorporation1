@@ -98,7 +98,7 @@ public class Bottle : MonoBehaviour
         {
 
             //Launch();
-            Rotation();
+            //Rotation();
             
             if (currentFuel <= 0)
             {
@@ -194,7 +194,7 @@ public class Bottle : MonoBehaviour
     {
         PlayerPrefs.SetInt("coinsFinal", coinsCount);
     }
-    public void Rotation()//Поворот ракеты
+    public void Rotation(bool ispressed)//Поворот ракеты
     {
         float rotationSpeed = rotSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
@@ -205,6 +205,17 @@ public class Bottle : MonoBehaviour
         {
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
+
+    }
+    public void RotationLeft()
+    {
+        float rotationSpeed = rotSpeed * Time.deltaTime;
+        transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
+    }
+    public void RotationRight()
+    {
+        float rotationSpeed = rotSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
     void OnCollisionEnter(Collision collision)
     {

@@ -5,33 +5,31 @@ using UnityEngine.EventSystems;
 
 public class PressedButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    public enum Movement
+    {
+        RotationLeft,
+        RotationRight,
+        Launch,
+    }
+    public Movement movementDirection;
     [SerializeField]
     public Bottle bottle;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     public void Update()
     {
         if (!ispressed)
             return;
-        bottle.Launch(ispressed);
-        
-
-        // DO SOMETHING HERE
-        //Debug.Log("Pressed");
-
+        if (movementDirection == Movement.RotationLeft)
+            bottle.RotationLeft();
+        else if (movementDirection == Movement.RotationRight)
+            bottle.RotationRight();
+        else if (movementDirection == Movement.Launch)
+            bottle.Launch(ispressed);
     }
     bool ispressed = false;
     public void OnPointerDown(PointerEventData eventData)
     {
         ispressed = true;
-        
-        
     }
 
     public void OnPointerUp(PointerEventData eventData)
