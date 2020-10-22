@@ -23,12 +23,15 @@ public class Bottle : MonoBehaviour
     [SerializeField] AudioClip winSound;
     
     [SerializeField] Text coins;
-    
+    [SerializeField] Text brilliants;
+
+
     [SerializeField] ParticleSystem flyParticle;
     [SerializeField] ParticleSystem boomParticle;
     [SerializeField] ParticleSystem winParticle;
     public int coinsCount;
-   
+    public int brilliantsCount;
+
 
     public DeathMenu deathMenu;
     private bool isPaused = false;
@@ -66,8 +69,18 @@ public class Bottle : MonoBehaviour
         }
         
             coins.text = "Coins:" + coinsCount.ToString();
-        
-        
+        if (PlayerPrefs.HasKey("brilliantsFinal"))
+        {
+            brilliantsCount = PlayerPrefs.GetInt("brilliantsFinal");
+        }
+        else
+        {
+            brilliantsCount = 0;
+        }
+
+        brilliants.text = "Brilliants:" + brilliantsCount.ToString();
+
+
 
 
 
@@ -137,7 +150,7 @@ public class Bottle : MonoBehaviour
     public void exit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Shop");
+        SceneManager.LoadScene("Menu");
     }
 
     public void Launch(bool ispressed)//Взлет
@@ -187,10 +200,22 @@ public class Bottle : MonoBehaviour
             SavePlayer();
             Destroy(trigger.gameObject);
         }
+        if (trigger.gameObject.tag == "Brilliant")
+        {
+            brilliantsCount += 1;
+            brilliants.text = "Brilliants:" + brilliantsCount.ToString();
+
+            SavePlayer2();
+            Destroy(trigger.gameObject);
+        }
     }
     void SavePlayer()
     {
         PlayerPrefs.SetInt("coinsFinal", coinsCount);
+    }
+    void SavePlayer2()
+    {
+        PlayerPrefs.SetInt("brilliantsFinal", brilliantsCount);
     }
     public void Rotation(bool ispressed)//Поворот ракеты
     {
@@ -249,7 +274,12 @@ public class Bottle : MonoBehaviour
         audioSource.PlayOneShot(boomSound);
         boomParticle.Play();
         deathMenu.ToggleEndMenu();
+        Invoke("TimeScale", 1f);
         
+    }
+    void TimeScale()
+    {
+        Time.timeScale = 0;
     }
     public void Finish()//Финиш
     {

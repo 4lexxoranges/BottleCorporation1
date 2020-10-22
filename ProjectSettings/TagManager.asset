@@ -12,6 +12,7 @@ TagManager:
   - Person
   - Fuel
   - Coin
+  - Brilliant
   layers:
   - Default
   - TransparentFX

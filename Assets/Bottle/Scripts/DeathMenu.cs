@@ -16,7 +16,13 @@ public class DeathMenu : MonoBehaviour
     public void ToggleEndMenu()
     {
         gameObject.SetActive(true);
+        Invoke("TimeScale", 1f);
     }
+    void TimeScale()
+    {
+        Time.timeScale = 0;
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene("Game");
