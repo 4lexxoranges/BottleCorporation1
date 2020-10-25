@@ -1,5 +1,4 @@
 ﻿
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,7 +23,6 @@ public class Bottle : MonoBehaviour
     
     [SerializeField] Text coins;
     [SerializeField] Text brilliants;
-
 
     [SerializeField] ParticleSystem flyParticle;
     [SerializeField] ParticleSystem boomParticle;
@@ -67,8 +65,7 @@ public class Bottle : MonoBehaviour
         {
             coinsCount = 0;
         }
-        
-            coins.text = "Coins:" + coinsCount.ToString();
+        coins.text = "Coins: " + coinsCount.ToString();
         if (PlayerPrefs.HasKey("brilliantsFinal"))
         {
             brilliantsCount = PlayerPrefs.GetInt("brilliantsFinal");
@@ -78,12 +75,7 @@ public class Bottle : MonoBehaviour
             brilliantsCount = 0;
         }
 
-        brilliants.text = "Brilliants:" + brilliantsCount.ToString();
-
-
-
-
-
+        brilliants.text = "Brilliants: " + brilliantsCount.ToString();
     }
     public void Restart()
     {

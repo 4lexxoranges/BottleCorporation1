@@ -18,7 +18,7 @@ public class NumberGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numberGround == 1)
+        /*if (numberGround == 1)
         {
             ground1.SetActive(true);
             ground2.SetActive(false);
@@ -35,6 +35,6 @@ public class NumberGround : MonoBehaviour
             ground1.SetActive(false);
             ground2.SetActive(false);
             ground3.SetActive(true);
-        }
+        }*/
     }
 }

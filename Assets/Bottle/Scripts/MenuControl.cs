@@ -9,7 +9,7 @@ public class MenuControl : MonoBehaviour
 {
     [SerializeField] Text coins;
     public int coinsCount;
-
+    public GameObject howToPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +48,9 @@ public class MenuControl : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+    public void HowToPlayOn()
+    {
+        howToPlay.SetActive(true);
     }
 }
