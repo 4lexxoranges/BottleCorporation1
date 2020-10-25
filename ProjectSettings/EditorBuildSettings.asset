@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Bottle/Scenes/Shop.unity
     guid: 40aec593c7cbae84d91d9fc735aca701
-  - enabled: 1
-    path: Assets/Bottle/Scenes/Settings1.unity
-    guid: da8d17cd8f412794a8a0d8681f6290d8
-  - enabled: 1
-    path: Assets/Bottle/Scenes/Settings2.unity
-    guid: 38143daa0a05dc0468bad632a1eafba3
-  - enabled: 1
-    path: Assets/Bottle/Scenes/Information.unity
-    guid: 860c415678e6d844f91b042ec73ec620
   - enabled: 0
-    path: Assets/Bottle/Scenes/Sandbox.unity
-    guid: 6b69f5bbb27292f409ed9a7fa89afb62
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

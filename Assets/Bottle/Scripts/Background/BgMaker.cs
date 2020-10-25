@@ -21,6 +21,8 @@ public class BgMaker : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Bottle.x" + bottle.transform.position.x);
+        Debug.Log("Ground.x" + (spawnedBgWalls[spawnedBgWalls.Count - 1].end.transform.position.x - xOffsetToCreateNew));
         if (bottle.transform.position.x > spawnedBgWalls[spawnedBgWalls.Count - 1].end.transform.position.x - xOffsetToCreateNew)
         {
             SpawnBgWall();
