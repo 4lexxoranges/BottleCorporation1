@@ -156,7 +156,6 @@ public class Bottle : MonoBehaviour
                 audioSource.PlayOneShot(flySound);
             flyParticle.Play();
             fuelProgress();
-            Debug.Log("tap");
 
 
         }

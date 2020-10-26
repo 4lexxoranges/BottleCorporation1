@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -146,6 +148,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -157,6 +160,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -237,6 +241,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -248,6 +253,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -286,13 +292,14 @@ GameObject:
   - component: {fileID: 3508800672897551891}
   - component: {fileID: 3508800672897551890}
   - component: {fileID: 1902640664}
+  - component: {fileID: 532314216}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Person
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3508800674121030143
 Transform:
   m_ObjectHideFlags: 0
@@ -302,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 3508800674121188831}
   m_LocalRotation: {x: -0.00041045967, y: 7.686001e-11, z: -0.99999994, w: 0.00000018725349}
   m_LocalPosition: {x: 21.920715, y: 0.9532776, z: 3.2691984}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0281757, y: 1.1031837, z: 0.9540061}
   m_Children:
   - {fileID: 3508800674121030141}
   - {fileID: 3508800674121030139}
@@ -354,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d22b8cac25e5241a64edc9059625df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelSize: 21
-  fuelUsage: 2
+  fuelSize: 15
+  fuelUsage: 1
   fuelProgressBar: {fileID: 0}
   fuelAdd: 21
   flySpeed: 50
@@ -365,11 +372,13 @@ MonoBehaviour:
   loseSound: {fileID: 8300000, guid: e79d69f03c1d5ef43baffb5b259a2ae9, type: 3}
   winSound: {fileID: 8300000, guid: 6b574f02f11780246bf55732bbdc828c, type: 3}
   coins: {fileID: 0}
+  brilliants: {fileID: 0}
   flyParticle: {fileID: 198100718621797858}
   boomParticle: {fileID: 198204746829208277}
   winParticle: {fileID: 198631066050499358, guid: 94db2b2c0d5eb71498bcd6b3e2574fde,
     type: 3}
   coinsCount: 0
+  brilliantsCount: 0
   deathMenu: {fileID: 0}
   pp: {fileID: 0}
 --- !u!82 &1902640664
@@ -468,6 +477,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &532314216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3508800674121188831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49442a2df37e79746ba0caf9ca3e5787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  hightScore: 0
+  score2: {fileID: 0}
+  hightScore2: {fileID: 0}
 --- !u!1001 &1041694878
 PrefabInstance:
   m_ObjectHideFlags: 0
