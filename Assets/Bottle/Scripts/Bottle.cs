@@ -21,7 +21,7 @@ public class Bottle : MonoBehaviour
     [SerializeField] AudioClip loseSound;
     [SerializeField] AudioClip winSound;
     
-    [SerializeField] Text coins;
+    [SerializeField] public Text coins;
     [SerializeField] Text brilliants;
 
     [SerializeField] ParticleSystem flyParticle;
@@ -48,7 +48,7 @@ public class Bottle : MonoBehaviour
     State state = State.Playing;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         
         
