@@ -34,9 +34,7 @@ public class Bottle : MonoBehaviour
     public DeathMenu deathMenu;
     private bool isPaused = false;
     public GameObject pp;
-    
-   
-    
+
 
     private float currentFuel;
     Rigidbody rigidBody;

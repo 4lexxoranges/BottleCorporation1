@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Threading;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,8 @@ public class ShopBottle : MonoBehaviour
     public GameObject buttonEquip2;
     public GameObject buttonEquip3;
     private int NumberBottle;
+    private int NumberEquip;
+    private int NumberBuy;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,10 +58,54 @@ public class ShopBottle : MonoBehaviour
             tick2.SetActive(false);
             tick3.SetActive(true);
         }
+        if (NumberEquip == 1)
+        {
+            tick1.SetActive(true);
+            tick2.SetActive(false);
+            tick3.SetActive(false);
+            buttonEquip.SetActive(false);
+            buttonEquip2.SetActive(true);
+            buttonEquip3.SetActive(true);
+        }
+        if (NumberEquip == 2)
+        {
+
+            tick1.SetActive(false);
+            tick2.SetActive(true);
+            tick3.SetActive(false);
+            buttonEquip.SetActive(true);
+            buttonEquip2.SetActive(false);
+            buttonEquip3.SetActive(true);
+        }
+        if (NumberEquip == 3)
+        {
+            buttonEquip.SetActive(true);
+            buttonEquip2.SetActive(true);
+            buttonEquip3.SetActive(false);
+            buttonBuy2.SetActive(false);
+            tick1.SetActive(false);
+            tick2.SetActive(false);
+            tick3.SetActive(true);
+        }
+
 
     }
-
-    public void Equip()
+    public void Equip1()
+    {
+        NumberEquip = 1;
+        PlayerPrefs.SetInt("Equip", NumberEquip);
+    }
+    public void Equip2()
+    {
+        NumberEquip = 2;
+        PlayerPrefs.SetInt("Equip", NumberEquip);
+    }
+    public void Equip3()
+    {
+        NumberEquip = 3;
+        PlayerPrefs.SetInt("Equip", NumberEquip);
+    }
+    /*public void Equip()
     {
         tick1.SetActive(true);
         tick2.SetActive(false);
@@ -86,17 +133,16 @@ public class ShopBottle : MonoBehaviour
         tick2.SetActive(false);
         tick3.SetActive(true);
 
-    }
+    }*/
 
-    public void PanelOn()
+    public void ButtonBuy1()
     {
         panel1.SetActive(true);
         buttonBuy.SetActive(false);
         buttonBuy2.SetActive(false);
         imageChampange.SetActive(false);
-
     }
-    public void PanelOn2()
+    public void ButtonBuy2()
     {
         panel2.SetActive(true);
         buttonBuy.SetActive(false);
@@ -124,6 +170,7 @@ public class ShopBottle : MonoBehaviour
         buttonBuy.SetActive(false);
         buttonBuy2.SetActive(true);
         imageChampange.SetActive(true);
+        
     }
     public void ButtonNo()
     {
