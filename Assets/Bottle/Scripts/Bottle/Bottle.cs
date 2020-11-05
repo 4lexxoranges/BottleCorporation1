@@ -27,7 +27,7 @@ public class Bottle : MonoBehaviour
     [SerializeField] ParticleSystem flyParticle;
     [SerializeField] ParticleSystem boomParticle;
     [SerializeField] ParticleSystem winParticle;
-    public int coinsCount;
+    public static int coinsCount;
     public int brilliantsCount;
 
 
@@ -75,6 +75,7 @@ public class Bottle : MonoBehaviour
 
         brilliants.text = "Brilliants: " + brilliantsCount.ToString();
     }
+    
     public void Restart()
     {
         SceneManager.LoadScene("Game");
