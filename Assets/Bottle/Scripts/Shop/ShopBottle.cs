@@ -58,25 +58,6 @@ public class ShopBottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (NumberBottle == 1)
-        {
-            tick1.SetActive(true);
-            tick2.SetActive(false);
-            tick3.SetActive(false);
-        }
-        if (NumberBottle == 2)
-        {
-            tick1.SetActive(false);
-            tick2.SetActive(true);
-            tick3.SetActive(false);
-        }
-        if (NumberBottle == 3)
-        {
-            tick1.SetActive(false);
-            tick2.SetActive(false);
-            tick3.SetActive(true);
-        }
         if (NumberEquip == 1)
         {
             tick1.SetActive(true);
@@ -99,7 +80,6 @@ public class ShopBottle : MonoBehaviour
             {
                 buttonEquip3.SetActive(false);
             }
-            Bottle1();
         }
         if (NumberEquip == 2)
         {
@@ -117,7 +97,6 @@ public class ShopBottle : MonoBehaviour
                 buttonEquip3.SetActive(false);
             }
             buttonBuy.SetActive(false);
-            Bottle2();
         }
 
         if (NumberEquip == 3)
@@ -137,7 +116,6 @@ public class ShopBottle : MonoBehaviour
                 buttonEquip2.SetActive(false);
             }
             buttonBuy2.SetActive(false);
-            Bottle3();
         }
         if (isPurchased == true)
         {
@@ -159,6 +137,19 @@ public class ShopBottle : MonoBehaviour
             buttonBuy2.SetActive(true);
             buttonEquip3.SetActive(false);
         }
+    }
+    public void ButtonBuy1()
+    {
+        panel1.SetActive(true);
+        buttonBuy.SetActive(false);
+        buttonBuy2.SetActive(false);
+        imageChampange.SetActive(false);
+    }
+    public void ButtonBuy2()
+    {
+        panel2.SetActive(true);
+        buttonBuy.SetActive(false);
+        buttonBuy2.SetActive(false);
     }
     public void SavePurchased()
     {
@@ -182,27 +173,6 @@ public class ShopBottle : MonoBehaviour
         var resultPurchased2 = intToBool(PlayerPrefs.GetInt("Purchased2"));
         Debug.Log("Load2 " + resultPurchased2);
     }
-    public void Bottle1()
-    {
-        NumberBottle = 1;
-        PlayerPrefs.SetInt("Bottle", NumberBottle);
-    }
-    public void Bottle2()
-    {
-        if (isPurchased == true)
-        {
-            NumberBottle = 2;
-            PlayerPrefs.SetInt("Bottle", NumberBottle);
-        }
-    }
-    public void Bottle3()
-    {
-        if (isPurchased2 == true)
-        {
-            NumberBottle = 3;
-            PlayerPrefs.SetInt("Bottle", NumberBottle);
-        }
-    }
     public void Equip()
     {
         NumberEquip = 1;
@@ -210,28 +180,21 @@ public class ShopBottle : MonoBehaviour
     }
     public void Equip2()
     {
-        NumberEquip = 2;
-        PlayerPrefs.SetInt("Equip", NumberEquip);
+        if (isPurchased == true)
+        {
+            NumberEquip = 2;
+            PlayerPrefs.SetInt("Bottle", NumberEquip);
+        }
     }
     public void Equip3()
     {
-        NumberEquip = 3;
-        PlayerPrefs.SetInt("Equip", NumberEquip);
+        if (isPurchased2 == true)
+        {
+            NumberEquip = 3;
+            PlayerPrefs.SetInt("Bottle", NumberEquip);
+        }
     }
-    public void ButtonBuy1()
-    {
-        panel1.SetActive(true);
-        buttonBuy.SetActive(false);
-        buttonBuy2.SetActive(false);
-        imageChampange.SetActive(false);
-    }
-    public void ButtonBuy2()
-    {
-        panel2.SetActive(true);
-        buttonBuy.SetActive(false);
-        buttonBuy2.SetActive(false);
-    }
-
+    
     public void ButtonYes()
     {
         panel1.SetActive(false);
@@ -251,7 +214,6 @@ public class ShopBottle : MonoBehaviour
         isPurchased2 = true;
         Bottle.coinsCount -= 5000;
     }
-
     public void ButtonNo()
     {
         panel1.SetActive(false);
